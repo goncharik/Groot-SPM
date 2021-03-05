@@ -1,0 +1,23 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-module-flags: -target i386-apple-ios9.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Groot
+import CoreData
+import Foundation
+@_exported import Groot
+import Swift
+public func objects(withEntityName name: Swift.String, fromJSONData data: Foundation.Data, inContext context: CoreData.NSManagedObjectContext) throws -> [CoreData.NSManagedObject]
+public func objects<T>(fromJSONData data: Foundation.Data, inContext context: CoreData.NSManagedObjectContext) throws -> [T] where T : CoreData.NSManagedObject
+public typealias JSONDictionary = [Swift.String : Any]
+public func object(withEntityName name: Swift.String, fromJSONDictionary dictionary: Groot.JSONDictionary, inContext context: CoreData.NSManagedObjectContext) throws -> CoreData.NSManagedObject
+public func object<T>(fromJSONDictionary dictionary: Groot.JSONDictionary, inContext context: CoreData.NSManagedObjectContext) throws -> T where T : CoreData.NSManagedObject
+public typealias JSONArray = [Any]
+public func objects(withEntityName name: Swift.String, fromJSONArray array: Groot.JSONArray, inContext context: CoreData.NSManagedObjectContext) throws -> [CoreData.NSManagedObject]
+public func objects<T>(fromJSONArray array: Groot.JSONArray, inContext context: CoreData.NSManagedObjectContext) throws -> [T] where T : CoreData.NSManagedObject
+public func json(fromObject object: CoreData.NSManagedObject) -> Groot.JSONDictionary
+public func json(fromObjects objects: [CoreData.NSManagedObject]) -> Groot.JSONArray
+extension ValueTransformer {
+  public class func setValueTransformer<T, U>(withName name: Swift.String, transform: @escaping (T) -> (U?))
+  public class func setValueTransformer<T, U>(withName name: Swift.String, transform: @escaping (T) -> (U?), reverseTransform: @escaping (U) -> (T?))
+  public class func setDictionaryTransformer(withName name: Swift.String, transform: @escaping ([Swift.String : Swift.AnyObject]) -> ([Swift.String : Swift.AnyObject]?))
+  public class func setEntityMapper(withName name: Swift.String, map: @escaping ([Swift.String : Swift.AnyObject]) -> (Swift.String?))
+}

@@ -1,0 +1,11 @@
+framework module Groot {
+  umbrella header "Groot-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module Groot.Swift {
+    header "Groot-Swift.h"
+    requires objc
+}
